@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="contact-form">
+  <div class="container">
+    {{/* Contact form intentionally disabled — phone/text only per client request. */}}
+    <div class="contact-box row">
+      {{ with site.Params.contact -}}
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <h2>Call or Text</h2>
+          <p>Please reach us by phone or text. We do not offer email contact.</p>
+          <ul class="address-block">
+            {{ $add_address_descriptors := .address_descriptors }}
+            {{ with site.Params.location }}<li><i class="fas fa-map-marker-alt"></i>{{ if $add_address_descriptors }}{{ i18n "location" | printf "%s: " }}{{ end }}<div>{{ . | markdownify }}</div></li>{{ end }}
+            {{ with site.Params.phone }}<li><i class="fas fa-tty"></i>{{ if $add_address_descriptors }}{{ i18n "phone" | printf "%s: " }}{{ end }}<a href="tel:+19313002333">{{ . }}</a></li>{{ end }}
+            {{ with site.Params.phone2 }}<li><i class="fas fa-tty"></i>{{ if $add_address_descriptors }}{{ i18n "phone" | printf "%s: " }}{{ end }}<a href="tel:+16154180626">{{ . }}</a></li>{{ end }}
+          </ul>
+          <p><a class="btn btn-default" href="tel:+19313002333">Call or Text 931-300-2333</a></p>
+          <ul class="social-icons">
+            {{ range site.Params.socials -}}
+            <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>
+            {{- end }}
+          </ul>
+        </div>
+      </div>
+      {{- end }}
+      {{ if site.Params.gmap.enable -}}
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <div class="google-map">
+            <div class="map" id="map" data-latitude="{{ site.Params.gmap.map_latitude }}" data-longitude="{{ site.Params.gmap.map_longitude }}" data-marker="{{ site.Params.gmap.map_marker | relURL }}" data-marker-name="{{ site.Title }}"></div>
+          </div>
+        </div>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+{{ end }}
