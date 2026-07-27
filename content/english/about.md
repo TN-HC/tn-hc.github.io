@@ -1,6 +1,6 @@
 ---
 title: "Tennessee Horse Cremation, LLC"
-description: ""
+description: "Meet Edward Yescott and the family-run team behind Tennessee Horse Cremation in Hohenwald, TN."
 bg_image: "images/about-bg.png"
 layout: "about"
 draft: false

@@ -1,0 +1,28 @@
+<div class="ft-full">
+  <div class="ft-note">
+    <p>
+      {{ site.Params.footer_note }}
+    </p>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-menu">
+          <ul>
+            {{ range site.Menus.footer }}
+            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="footer-logo">
+        <a href="https://iaopc.com">
+          <img src="/{{ site.Params.footer_image }}">
+        </a>
+      </div>
+      <p class="copyright">Copyright &copy; 2022-{{ now.Year }} {{ site.Params.copyright | markdownify }}</p>
+    </div>
+  </div>
+</footer>
