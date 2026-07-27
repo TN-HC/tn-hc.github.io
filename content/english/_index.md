@@ -24,6 +24,8 @@ about:
   <br />
   <p style="line-height:20px;">Let Tennessee Horse Cremation, LLC, care for you and your horse today.</p>
   <br />
+  <p style="line-height:20px; text-align: center;">Serving all of Tennessee and surrounding states.</p>
+  <br />
   <div style="text-align: center;"><h3>Call us at (931) 300-2333</h3></div>'
   image: "images/horses-about.png"
 
