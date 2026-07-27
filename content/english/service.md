@@ -24,7 +24,7 @@ We use a custom made trailer that allows us to NEVER have to use straps or chain
 <li>Serving Tennessee and surrounding states</li>
 </ul>
 
-<div style="text-align: center;"><h3>Call us at (931) 300-2333</h3></div>'
+<div style="text-align: center;"><h3>Call us at <a href="tel:+19313002333">(931) 300-2333</a></h3></div>'
   image : "images/urn.jpg"
 
 

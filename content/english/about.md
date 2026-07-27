@@ -16,7 +16,7 @@ about:
   
   After apprenticing for several years at an equine crematorium in Connecticut, I decided to move my family to Tennessee where I saw a great need for a caring equine cremation specialist. So I built and opened Tennessee Horse Cremation, LLC, a family run business that treats our customers as an extension of that family and each horse with compassion and dignity. We are setting the bar for a new standard of end of life service.
 
-  <div style="text-align: center;"><h3>Call us at (931) 300-2333</h3></div>'
+  <div style="text-align: center;"><h3>Call us at <a href="tel:+19313002333">(931) 300-2333</a></h3></div>'
 
   button:
     enable : false
