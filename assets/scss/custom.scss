@@ -3,6 +3,11 @@
   display: none;
 }
 
+.sticky-call-backdrop,
+.sticky-call-sheet {
+  display: none;
+}
+
 @media (max-width: 767px) {
   body {
     padding-bottom: 4.5rem;
@@ -10,6 +15,8 @@
 
   .sticky-call-text {
     display: block;
+    width: 100%;
+    border: 0;
     position: fixed;
     left: 0;
     right: 0;
@@ -24,6 +31,7 @@
     padding: 0.9rem 1rem calc(0.9rem + env(safe-area-inset-bottom, 0px));
     text-decoration: none;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
   }
 
   .sticky-call-text:hover,
@@ -31,6 +39,119 @@
     color: #fff;
     text-decoration: none;
     background-color: #088e8d;
+  }
+
+  .sticky-call-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .sticky-call-sheet {
+    display: block;
+    position: fixed;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+    z-index: 1002;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+  }
+
+  .sticky-call-sheet[hidden],
+  .sticky-call-backdrop[hidden] {
+    display: none !important;
+  }
+
+  .sticky-call-sheet-title {
+    margin: 0 0 0.75rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .sticky-call-action {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    background-color: #0aa8a7;
+    color: #fff !important;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none !important;
+  }
+
+  .sticky-call-action--secondary {
+    background-color: #1f6f6e;
+  }
+
+  .sticky-call-cancel {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    border: 0;
+    background: transparent;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+  }
+}
+
+/* Contact page title banner — stronger contrast + white phone link */
+.page-title--contact {
+  &:before {
+    background: #000;
+    opacity: 0.55;
+  }
+
+  .block {
+    h1,
+    p {
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      max-width: 36rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .page-title-phone {
+    color: #fff !important;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    -webkit-text-fill-color: #fff;
+  }
+
+  .page-title-phone:hover,
+  .page-title-phone:focus {
+    color: #e8fffe !important;
+    -webkit-text-fill-color: #e8fffe;
+  }
+}
+
+.contact-call-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  .btn {
+    margin: 0;
   }
 }
 

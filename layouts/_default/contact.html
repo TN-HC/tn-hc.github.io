@@ -17,7 +17,10 @@
             {{ with site.Params.phone }}<li><i class="fas fa-tty"></i>{{ if $add_address_descriptors }}{{ i18n "phone" | printf "%s: " }}{{ end }}<a href="tel:+19313002333">{{ . }}</a></li>{{ end }}
             {{ with site.Params.phone2 }}<li><i class="fas fa-tty"></i>{{ if $add_address_descriptors }}{{ i18n "phone" | printf "%s: " }}{{ end }}<a href="tel:+16154180626">{{ . }}</a></li>{{ end }}
           </ul>
-          <p><a class="btn btn-default" href="tel:+19313002333">Call or Text 931-300-2333</a></p>
+          <p class="contact-call-actions">
+            <a class="btn btn-default" href="tel:+19313002333">Call 931-300-2333</a>
+            <a class="btn btn-default" href="sms:+19313002333">Text 931-300-2333</a>
+          </p>
           <ul class="social-icons">
             {{ range site.Params.socials -}}
             <li><a href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i></a></li>

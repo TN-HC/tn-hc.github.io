@@ -28,4 +28,45 @@
   </div>
 </footer>
 
-<a class="sticky-call-text" href="tel:+19313002333">Call or Text</a>
+<div class="sticky-call" data-sticky-call>
+  <button type="button" class="sticky-call-text" data-sticky-call-open aria-expanded="false" aria-controls="sticky-call-sheet">
+    Call or Text
+  </button>
+  <div class="sticky-call-backdrop" data-sticky-call-close hidden></div>
+  <div id="sticky-call-sheet" class="sticky-call-sheet" role="dialog" aria-label="Call or text Tennessee Horse Cremation" hidden>
+    <p class="sticky-call-sheet-title">How would you like to reach us?</p>
+    <a class="sticky-call-action" href="tel:+19313002333">Call 931-300-2333</a>
+    <a class="sticky-call-action sticky-call-action--secondary" href="sms:+19313002333">Text 931-300-2333</a>
+    <button type="button" class="sticky-call-cancel" data-sticky-call-close>Cancel</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector("[data-sticky-call]");
+  if (!root) return;
+  var openBtn = root.querySelector("[data-sticky-call-open]");
+  var sheet = root.querySelector("#sticky-call-sheet");
+  var backdrop = root.querySelector(".sticky-call-backdrop");
+  var closers = root.querySelectorAll("[data-sticky-call-close]");
+
+  function setOpen(isOpen) {
+    openBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    sheet.hidden = !isOpen;
+    backdrop.hidden = !isOpen;
+    root.classList.toggle("is-open", isOpen);
+  }
+
+  openBtn.addEventListener("click", function () {
+    setOpen(sheet.hidden);
+  });
+  closers.forEach(function (el) {
+    el.addEventListener("click", function () {
+      setOpen(false);
+    });
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") setOpen(false);
+  });
+})();
+</script>

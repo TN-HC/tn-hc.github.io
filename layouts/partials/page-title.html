@@ -1,0 +1,18 @@
+<section class="page-title bg-2{{ if eq .Layout "contact" }} page-title--contact{{ end }}" style="background-image: url('{{ .Params.bg_image | relURL }}');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.description }}
+          {{ if eq $.Layout "contact" }}
+          <p x-apple-data-detectors="false">{{ replace . "931-300-2333" "<a class=\"page-title-phone\" href=\"tel:+19313002333\">931-300-2333</a>" | safeHTML }}</p>
+          {{ else }}
+          <p>{{ . }}</p>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
