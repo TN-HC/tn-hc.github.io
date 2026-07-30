@@ -33,3 +33,28 @@
     background-color: #088e8d;
   }
 }
+
+/* Native homepage reviews */
+.family-reviews {
+  background-color: #f7f7f7;
+
+  .family-review {
+    margin: 0 0 1.75rem;
+    padding: 0 0 0 1.25rem;
+    border-left: 3px solid #0aa8a7;
+    background: transparent;
+
+    p {
+      margin: 0 0 0.5rem;
+      line-height: 1.6;
+      color: #444;
+      font-size: 1.25rem;
+    }
+
+    footer {
+      color: #666;
+      font-size: 1.05rem;
+      font-style: normal;
+    }
+  }
+}

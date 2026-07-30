@@ -54,6 +54,22 @@ service:
   enable: false
   # service content comes from "service.md" file
 
+############################# Family reviews (native homepage) ######
+family_reviews:
+  enable: true
+  title: "What families say"
+  items:
+  - name: "Debora"
+    content: "Thank you to Edward for his professional and prompt response to take care of our 30 year old mare. He was kind and caring. Would highly recommend Tennessee Horse Cremation."
+  - name: "Jen"
+    content: "Wonderful service during a very hard time. Edward was so very kind and caring throughout the process. Very thankful for his quick help and kindness to both me and our dear boy."
+  - name: "Ellen"
+    content: "We called Edward this evening to come out in the pouring rain as we had to put down one of the horses. He was extremely kind, empathetic and helpful. They arrived very quickly once called and did an excellent job. We truly appreciate you."
+  - name: "Curt"
+    content: "Very professional, respectful, and compassionate. Ed took great care of Mr Riddick. My wife and I would highly recommend them."
+  - name: "Angela"
+    content: "Ed was very kind and patient when scheduling my beloved stallion’s cremation. He arrived for pickup when scheduled and was very professional and efficient. He made the process so much easier and I cannot thank him enough for the incredible service he provided."
+
 ############################# Testimonials ############################
 testimonials:
   enable: false
