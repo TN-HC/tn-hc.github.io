@@ -1,6 +1,6 @@
 ---
 title: "A Graceful And Loving Memorial For Your Horse"
-description: ""
+description: "Private whole-horse cremation with cradle-lift care, memorial urn return, and pickup day or night."
 bg_image: "images/horses-services.jpg"
 layout: "service"
 draft: false

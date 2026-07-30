@@ -1,4 +1,5 @@
 ---
+description: "Compassionate equine cremation serving all of Tennessee and surrounding states, available day or night."
 ############################### Banner ##############################
 banner:
   enable: true
