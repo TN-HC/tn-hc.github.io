@@ -19,7 +19,8 @@ address_descriptors = true
 # contact info
 phone = "+1 (931) 300-2333"
 phone2 = "Alternate: +1 (615) 418-0626"
-email = "edward@tnhorsecremation.com"
+# Email contact removed per client request (phone/text only)
+email = ""
 location = """
 **Tennessee Horse Cremation LLC**  
 Hohenwald, TN  
@@ -39,11 +40,11 @@ recaptcha_site_key = "6Lc8_d8UAAAAAIhYYPFb456Jr1xbFGdcQ9MTAkW9"
 footer_note = "For payments, we accept all major credit cards (with an additional 4% service fee), checks, and cash."
 
 [contact.form]
-enable = true
+enable = false
 # Whether to use [Netlify Forms](https://docs.netlify.com/forms/setup/)
 use_netlify = false
 # Whether to use recaptch v3 in form
-use_recaptcha = true
+use_recaptcha = false
 # Form action
 ## Fill in your Form ID URL for Formspree.io, e.g. `https://formspree.io/f/{form_id}`
 ## Ignored if `use_netlify = true` (custom [success page](https://docs.netlify.com/forms/setup/#success-messages) is already included) 
