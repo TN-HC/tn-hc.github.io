@@ -1,5 +1,5 @@
 ---
-description: "Compassionate equine cremation serving all of Tennessee and surrounding states, available day or night."
+description: "Compassionate equine cremation based in Middle Tennessee, also serving Alabama, Kentucky, Georgia, and Mississippi, available day or night."
 ############################### Banner ##############################
 banner:
   enable: true
@@ -25,7 +25,8 @@ about:
   <br />
   <p style="line-height:20px;">Let Tennessee Horse Cremation, LLC, care for you and your horse today.</p>
   <br />
-  <p style="line-height:20px; text-align: center;">Serving all of Tennessee and surrounding states.</p>
+  <p style="line-height:20px; text-align: center; font-weight: 700;">Based in Middle Tennessee, we also serve Alabama, Kentucky, Georgia, and Mississippi.</p>
+  <p style="line-height:20px; text-align: center; font-weight: 700;">If you''re outside Tennessee, call or text us, we likely cover your area.</p>
   <br />
   <div style="text-align: center;"><h3>Call us at <a href="tel:+19313002333">(931) 300-2333</a></h3></div>'
   image: "images/horses-about.png"
