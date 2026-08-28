@@ -21,7 +21,7 @@ We use a custom made trailer that allows us to NEVER have to use straps or chain
 <li>We accommodate special requests</li>
 <li>We coordinate and work with the Vet</li>
 <li>Never a charge for night, weekend, or holiday pickup</li>
-<li>Serving Tennessee, Kentucky, Mississippi, Alabama, and Georgia</li>
+<li>Based in Middle Tennessee, we also serve Alabama, Kentucky, Georgia, and Mississippi</li>
 </ul>
 
 <div style="text-align: center;"><h3>Call us at <a href="tel:+19313002333">(931) 300-2333</a></h3></div>'

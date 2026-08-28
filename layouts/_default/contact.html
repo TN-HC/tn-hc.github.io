@@ -11,7 +11,7 @@
         <div class="block">
           <h2>Call or Text</h2>
           <p>Please reach us by phone or text. We do not offer email contact.</p>
-          <p><strong>Where we serve:</strong> Tennessee, Kentucky, Mississippi, Alabama, and Georgia. If you are outside these states, call or text us — we likely cover your area.</p>
+          <p><strong>Where we serve:</strong> Based in Middle Tennessee, we also serve Alabama, Kentucky, Georgia, and Mississippi. If you are outside Tennessee, call or text us, we likely cover your area.</p>
           <ul class="address-block">
             {{ $add_address_descriptors := .address_descriptors }}
             {{ with site.Params.location }}<li><i class="fas fa-map-marker-alt"></i>{{ if $add_address_descriptors }}{{ i18n "location" | printf "%s: " }}{{ end }}<div>{{ . | markdownify }}</div></li>{{ end }}
