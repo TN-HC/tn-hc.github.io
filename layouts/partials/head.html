@@ -102,19 +102,41 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '2083785332527753');
 fbq('track', 'PageView');
-document.addEventListener('click', function (event) {
-  var link = event.target.closest('a[href^="tel:"], a[href^="sms:"]');
-  if (!link) return;
-  event.preventDefault();
-  fbq('track', 'Contact');
-  try {
-    navigator.sendBeacon('https://www.facebook.com/tr?id=2083785332527753&ev=Contact&noscript=1');
-  } catch (err) {}
-  var href = link.href;
-  setTimeout(function () {
-    window.location.href = href;
-  }, 400);
-}, true);
+</script>
+<script>
+(function () {
+  function findLink(node) {
+    while (node && node !== document) {
+      if (node.tagName === 'A') return node;
+      node = node.parentNode;
+    }
+    return null;
+  }
+  function isPhoneLink(link) {
+    if (!link) return false;
+    var href = ((link.getAttribute('href') || '') + ' ' + (link.href || '')).toLowerCase();
+    return href.indexOf('tel:') !== -1 || href.indexOf('sms:') !== -1;
+  }
+  function trackPhone() {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact');
+      fbq('trackCustom', 'PhoneCall');
+    }
+    var img = new Image();
+    img.src = 'https://www.facebook.com/tr?id=2083785332527753&ev=Contact&noscript=1&ts=' + Date.now();
+  }
+  document.addEventListener('pointerdown', function (event) {
+    if (isPhoneLink(findLink(event.target))) trackPhone();
+  }, true);
+  document.addEventListener('click', function (event) {
+    var link = findLink(event.target);
+    if (!isPhoneLink(link)) return;
+    event.preventDefault();
+    trackPhone();
+    var href = link.href;
+    setTimeout(function () { window.location.href = href; }, 700);
+  }, true);
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2083785332527753&ev=PageView&noscript=1"
