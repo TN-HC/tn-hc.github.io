@@ -103,13 +103,18 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '2083785332527753');
 fbq('track', 'PageView');
 document.addEventListener('click', function (event) {
-  var link = event.target.closest('a');
-  if (!link || !link.href) return;
-  var href = link.getAttribute('href') || '';
-  if (href.indexOf('tel:') === 0 || href.indexOf('sms:') === 0) {
-    fbq('track', 'Contact');
-  }
-});
+  var link = event.target.closest('a[href^="tel:"], a[href^="sms:"]');
+  if (!link) return;
+  event.preventDefault();
+  fbq('track', 'Contact');
+  try {
+    navigator.sendBeacon('https://www.facebook.com/tr?id=2083785332527753&ev=Contact&noscript=1');
+  } catch (err) {}
+  var href = link.href;
+  setTimeout(function () {
+    window.location.href = href;
+  }, 400);
+}, true);
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2083785332527753&ev=PageView&noscript=1"
