@@ -115,9 +115,10 @@ fbq('track', 'PageView');
     event.preventDefault();
     var href = (link.getAttribute('href') || '').toLowerCase();
     var method = href.indexOf('sms:') === 0 ? 'text' : 'call';
+    var eventName = method === 'text' ? 'Text' : 'PhoneCall';
     if (typeof fbq === 'function') {
-      fbq('track', 'Contact', { content_category: method });
-      fbq('trackCustom', 'PhoneCall', { content_category: method });
+      fbq('track', 'Contact', { content_name: method, content_category: method });
+      fbq('trackCustom', eventName, { content_name: method, content_category: method });
     }
     setTimeout(function () { window.location.href = link.href; }, 700);
   }, true);
