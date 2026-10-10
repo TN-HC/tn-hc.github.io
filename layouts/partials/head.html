@@ -116,8 +116,8 @@ fbq('track', 'PageView');
     var href = (link.getAttribute('href') || '').toLowerCase();
     var method = href.indexOf('sms:') === 0 ? 'text' : 'call';
     if (typeof fbq === 'function') {
-      fbq('track', 'Contact', { method: method });
-      fbq('trackCustom', 'PhoneCall', { method: method });
+      fbq('track', 'Contact', { content_category: method });
+      fbq('trackCustom', 'PhoneCall', { content_category: method });
     }
     setTimeout(function () { window.location.href = link.href; }, 700);
   }, true);
