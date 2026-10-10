@@ -106,38 +106,20 @@ fbq('track', 'PageView');
 </script>
 <script>
 (function () {
-  function findLink(node) {
-    while (node && node !== document) {
-      if (node.tagName === 'A') return node;
-      node = node.parentNode;
-    }
-    return null;
-  }
-  function isPhoneLink(link) {
-    if (!link) return false;
-    var href = ((link.getAttribute('href') || '') + ' ' + (link.href || '')).toLowerCase();
-    return href.indexOf('tel:') !== -1 || href.indexOf('sms:') !== -1;
-  }
-  function trackPhone() {
-    if (typeof fbq === 'function') {
-      fbq('track', 'Contact');
-      fbq('trackCustom', 'PhoneCall');
-    }
-  }
-  var lastPhoneTrack = 0;
+  if (window.__tnhcContactBound) return;
+  window.__tnhcContactBound = true;
   document.addEventListener('click', function (event) {
-    var link = findLink(event.target);
-    if (!isPhoneLink(link)) return;
+    var el = event.target && event.target.closest ? event.target : event.target.parentElement;
+    var link = el && el.closest('a[href^="tel:"], a[href^="sms:"]');
+    if (!link) return;
     event.preventDefault();
-    var now = Date.now();
-    if (now - lastPhoneTrack < 1000) {
-      setTimeout(function () { window.location.href = link.href; }, 700);
-      return;
+    var href = (link.getAttribute('href') || '').toLowerCase();
+    var method = href.indexOf('sms:') === 0 ? 'text' : 'call';
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact', { method: method });
+      fbq('trackCustom', 'PhoneCall', { method: method });
     }
-    lastPhoneTrack = now;
-    trackPhone();
-    var href = link.href;
-    setTimeout(function () { window.location.href = href; }, 700);
+    setTimeout(function () { window.location.href = link.href; }, 700);
   }, true);
 })();
 </script>
